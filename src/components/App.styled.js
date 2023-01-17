@@ -10,7 +10,7 @@ export const Box = styled.div`
     padding: 20px;
 `;
 
-export const Button = styled.button`
-    margin-top: 10px;
-    display: block;
-`
+// export const Button = styled.button`
+//     margin-top: 10px;
+//     display: block;
+// `
