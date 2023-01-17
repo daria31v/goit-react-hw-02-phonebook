@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Box } from './App.styled';
-import { ContactForma } from './ContactForm/ContactForma';
+import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 // import { nanoid } from 'nanoid';
 // ALERT for add 2 the same
@@ -13,6 +13,24 @@ export class App extends Component {
     filter: '',
   };
 
+  formSubmit = data => {
+    console.log(data)
+  }
+
+  hanleInputFilter = e => {
+    console.log(e.currentTarget.value);
+    this.setState({ filter: e.currentTarget.value });
+}
+
+//   hanleInputChange = e => {
+//     console.log(e.currentTarget);
+//     console.log(e.currentTarget.name);
+//     console.log(e.currentTarget.value);
+//     const { contacts, filter } = e.currentTarget;
+//     this.setState({[contacts]: filter})
+
+// }
+  
   // state = {
   //   contacts: [],
   //   name: '',
@@ -30,61 +48,28 @@ export class App extends Component {
   //   name: '',
   //   number: ''
   // }
-  // onChange =
+
 
   render() {
+    
     return (
       <Box>
-        {/*
-          <h1>Phonebook</h1>
-          <ContactForm ... />
-          <ContactsForm onSubmit={this.addContacts} />
-        <ContactList
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={this.formSubmit}
+          // onUpdate={this.hanleInputChange}
+        />
+        <h2>Contacts</h2>
+        <Filter onChange={this.hanleInputFilter}
+        value={this.state.filter}/>
+
+        {/* <ContactList
           items={this.state.contacts}
           onDelete={this.deleteContact}
-        />
-
-
-          <h2>Contacts</h2>
-          <Filter onChange={e => this.setState({filter: e.target.value})} />
-          
-          <ContactList ... />
-        */}
-
-        <ContactForma />
-
-        {/* <form>
-          <h1>Phonebook</h1>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
-          <label>Number</label>
-          <input
-            type="tel"
-            name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
-          <Button>Add contacts</Button>
-        </form> */}
-
-        <div>
-          <h2>Contacts</h2>
-          <Filter onChange={e => this.setState({ filter: e.target.value })}
-            value={this.state.filter}
-          />
-          {/* <p>Find contacts by name</p>
-          <input></input> */}
+        /> */}
           <ul>
             <li>Jacob Mercer</li>
           </ul>
-        </div>
+        
       </Box>
     );
   }
