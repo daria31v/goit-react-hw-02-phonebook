@@ -1,5 +1,5 @@
 import { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { Button, FormAddContacts, ErrorText } from './ContactForm.styled';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -86,3 +86,11 @@ export class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  value: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired
+  }),
+  onSubmit: PropTypes.func.isRequired,
+  }.isRequired

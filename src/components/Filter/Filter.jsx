@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { nanoid } from "nanoid";
 
@@ -11,3 +11,8 @@ export const Filter = ({ onChange, value }) => {
     </>
   );
 };
+
+Filter.prototypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+}.isRequired

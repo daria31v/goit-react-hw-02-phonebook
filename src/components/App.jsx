@@ -4,10 +4,11 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 
 export class App extends Component {
-  
+  static propTypes = {};
   state = {
     contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -41,7 +42,6 @@ export class App extends Component {
   };
 
   changeFilter = e => {
-    console.log(e.currentTarget.value);
     this.setState({ filter: e.currentTarget.value });
   };
 
@@ -76,3 +76,8 @@ export class App extends Component {
   }
 
 }
+
+App.propTypes = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired
+}.isRequired

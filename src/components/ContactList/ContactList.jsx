@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { ContactItems } from '../ContactItems/ContactItems';
 import { Component } from 'react';
@@ -23,8 +23,7 @@ export class ContactList extends Component {
 }
 
 
-// ContactList.proTypes = {
-//     items: PropTypes.arr.isRequired,
-    //    onDelete: PropType.func.isRequired})
-//     ).isRequired
-// }
+ContactList.propTypes = {
+  items: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired}.isRequired
+
