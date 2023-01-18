@@ -14,17 +14,6 @@
 
 import { nanoid } from "nanoid";
 
-  
-  
-  //   hanleInputChange = e => {
-  //     console.log(e.currentTarget);
-  //     console.log(e.currentTarget.name);
-  //     console.log(e.currentTarget.value);
-  //     const { contacts, filter } = e.currentTarget;
-  //     this.setState({[contacts]: filter})
-
-  // }
-
 export const Filter = ({ onChange, value }) => {
   const idInput = nanoid();
   return (
