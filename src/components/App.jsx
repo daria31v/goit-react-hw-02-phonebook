@@ -5,7 +5,6 @@ import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
 
-// ALERT for add 2 the same
 
 export class App extends Component {
   

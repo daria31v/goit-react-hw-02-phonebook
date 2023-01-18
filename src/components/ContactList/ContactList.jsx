@@ -1,3 +1,5 @@
+// import PropTypes from 'prop-types';
+
 import { ContactItems } from '../ContactItems/ContactItems';
 import { Component } from 'react';
 
