@@ -11,6 +11,9 @@
   //   name: '',
   //   number: ''
   // }
+
+import { nanoid } from "nanoid";
+
   
   
   //   hanleInputChange = e => {
@@ -23,10 +26,11 @@
   // }
 
 export const Filter = ({ onChange, value }) => {
+  const idInput = nanoid();
   return (
     <>
-      <p>Find contacts by name</p>
-      <input type="text" onChange={onChange} value={value}></input>
+      <label htmlFor="idInput">Find contacts by name</label>
+      <input type="text" onChange={onChange} value={value} id={idInput}></input>
     </>
   );
 };

@@ -14,11 +14,11 @@ export const ContactItems = ({ item: { id, name, number}, onDelete }) => {
 
 
 
-ContactItems.propTypes = {
-  items: PropTypes.exact({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
-    // onDelete: PropType.fun.isRequired,
-  }).isRequired,
-};
+// ContactItems.propTypes = {
+//   items: PropTypes.exact({
+//     id: PropTypes.number.isRequired,
+//     name: PropTypes.string.isRequired,
+//     number: PropTypes.number.isRequired,
+//     // onDelete: PropType.fun.isRequired,
+//   }).isRequired,
+// };

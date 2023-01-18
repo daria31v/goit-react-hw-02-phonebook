@@ -4,12 +4,11 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { nanoid } from 'nanoid';
-// import { string } from 'prop-types';
 
 // ALERT for add 2 the same
 
 export class App extends Component {
-  // for APP
+  
   state = {
     contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -20,11 +19,12 @@ export class App extends Component {
     filter: '',
   };
 
-  // addContact = 
-
   addContact = (name, number) => {
-       
-    
+    const { contacts } = this.state;
+    if (contacts.find(contact => contact.name === name)) {
+      alert(`${name} is already in your Phonebook!`);
+      return
+    }
     this.setState(({ contacts }) => ({
       contacts: [ 
         {
@@ -40,20 +40,23 @@ export class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
-      
-    
 
-
-  hanleInputFilter = e => {
+  changeFilter = e => {
     console.log(e.currentTarget.value);
     this.setState({ filter: e.currentTarget.value });
   };
 
+  searchContact = () => {
+    const { contacts, filter } = this.state;
+
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter),);
+  }
 
   render() {
-    // const { contacts } = this.state;
-    // console.log({ contacts })
-    
+  const fesultFilter = this.searchContact()
 
     return (
       <Box>
@@ -63,10 +66,10 @@ export class App extends Component {
           
         />
         <h2>Contacts</h2>
-        <Filter onChange={this.hanleInputFilter} value={this.state.filter} />
+        <Filter onChange={this.changeFilter} value={this.filter} />
 
         <ContactList
-          items={this.state.contacts}
+          items={fesultFilter}
           onDelete={this.deleteContact}
         />
       </Box>
