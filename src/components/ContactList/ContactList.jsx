@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-
+import {List, Contact} from './ContactList.styled'
 import { ContactItems } from '../ContactItems/ContactItems';
 import { Component } from 'react';
-
+import {GiRotaryPhone} from 'react-icons/gi'
 export class ContactList extends Component {
     state = {
       contacts:[],
@@ -11,13 +11,14 @@ export class ContactList extends Component {
   render() {
     const { items, onDelete } = this.props;
     return (
-      <ul>
+      <List>
         {items.map(item => (
-          <li key={item.id}>
+          
+          <Contact key={item.id}><GiRotaryPhone/>
             <ContactItems item={item} onDelete={onDelete} />
-          </li>
+          </Contact>
         ))}
-      </ul>
+      </List>
     );
   }
 }

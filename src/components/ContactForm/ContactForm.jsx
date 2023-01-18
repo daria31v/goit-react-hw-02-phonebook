@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Button, FormAddContacts, ErrorText } from './ContactForm.styled';
+import { AddContactBtn, Label, FormAddContacts, ErrorText } from './ContactForm.styled';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
 
@@ -50,8 +50,7 @@ export class ContactForm extends Component {
         // autoComplete="off"
         >
           <FormAddContacts>
-            <label htmlFor={this.nameInputId}>Name
-
+            <Label htmlFor={this.nameInputId}>Name
             <Field
               type="text"
               name="name"
@@ -62,9 +61,9 @@ export class ContactForm extends Component {
               id={this.nameInputId}
             />
             <FormError name='name' component="span"/>
-            </label>
+            </Label>
             
-            <label htmlFor={this.telInputId}>Number
+            <Label htmlFor={this.telInputId}>Number
             <Field
               type="tel"
               name="number"
@@ -75,11 +74,11 @@ export class ContactForm extends Component {
               id={this.telInputId}
               />
               <FormError name='number' component="span"/>
-              </label>
+              </Label>
             
           </FormAddContacts>
 
-          <Button type="submit">Add contacts</Button>
+          <AddContactBtn type="submit">Add contacts</AddContactBtn>
         </Form>
       </Formik>
       
